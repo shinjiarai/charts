@@ -8,6 +8,7 @@ metadata:
     chart: {{ include "hadoop.chart" . }}
     release: {{ .Release.Name }}
     component: yarn-nm
+    hpecp.hpe.com/hpecp-internal-gateway: "true"
 spec:
   ports:
   - port: 8088
@@ -16,7 +17,8 @@ spec:
     name: web2
   - port: 8042
     name: api
-  clusterIP: None
+  serviceType: NodePort
+#  clusterIP: None
   selector:
     app: {{ include "hadoop.name" . }}
     release: {{ .Release.Name }}
