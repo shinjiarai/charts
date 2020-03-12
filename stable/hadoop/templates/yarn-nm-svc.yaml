@@ -17,7 +17,7 @@ spec:
     name: web2
   - port: 8042
     name: api
-  serviceType: NodePort
+  type: NodePort
 #  clusterIP: None
   selector:
     app: {{ include "hadoop.name" . }}
