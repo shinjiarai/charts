@@ -4,6 +4,7 @@ metadata:
   name: {{ template "jenkins.fullname" . }}-agent
   namespace: {{ template "jenkins.namespace" . }}
   labels:
+    "hpecp.hpe.com/hpecp-internal-gateway": "true"
     "app.kubernetes.io/name": '{{ template "jenkins.name" .}}'
     "helm.sh/chart": "{{ .Chart.Name }}-{{ .Chart.Version }}"
     "app.kubernetes.io/managed-by": "{{ .Release.Service }}"
