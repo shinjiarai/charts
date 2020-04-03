@@ -24,7 +24,6 @@ metadata:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     component: "{{ .Release.Name }}-{{ .Values.Master.Component }}"
     hpecp.hpe.com/hpecp-internal-gateway: "true"
-    hpecp.hpe.com/portname-override: "http"
 spec:
   ports:
     - port: {{ .Values.WebUi.ServicePort }}
